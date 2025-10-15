@@ -1,0 +1,15 @@
+node_modules/
+
+.bun/
+
+.env
+.env.local
+.env.*.local
+
+data/
+
+*.log
+logs/
+
+dist/
+build/
