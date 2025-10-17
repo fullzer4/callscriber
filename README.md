@@ -1,4 +1,6 @@
-# Open Meeting Transcriber
+<p align="center">
+  <img src=".github/banner.png" alt="Open Meeting Transcriber Banner" style="border-radius: 10px; border: 4px solid #000000ff;">
+</p>
 
 > **Automated meeting transcription bot**
 
