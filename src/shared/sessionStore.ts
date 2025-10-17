@@ -46,7 +46,6 @@ class SessionStore {
     return session.csrfToken === csrfToken
   }
 
-  // Cleanup expired sessions periodically
   startCleanup(): void {
     setInterval(() => {
       const now = Date.now()

@@ -52,7 +52,9 @@ export class GoogleMeetJoiner {
 
       this.logger.info('Successfully joined Google Meet and started capture')
     } catch (error) {
-      this.logger.error({ error }, 'Failed to join Google Meet')
+      const errorMessage = error instanceof Error ? error.message : String(error)
+      const errorStack = error instanceof Error ? error.stack : undefined
+      this.logger.error({ error: errorMessage, stack: errorStack }, 'Failed to join Google Meet')
       throw error
     }
   }

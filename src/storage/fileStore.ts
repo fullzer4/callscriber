@@ -1,8 +1,8 @@
 import { join } from 'path'
 import { readFile, readdir, stat } from 'fs/promises'
-import { config } from '../config/index.js'
-import { mkdirp, writeJSON } from '../shared/fsx.js'
-import { logger } from '../shared/logger.js'
+import { config } from '../config/index'
+import { mkdirp, writeJSON } from '../shared/fsx'
+import { logger } from '../shared/logger'
 
 export class FileStore {
   private baseDir: string

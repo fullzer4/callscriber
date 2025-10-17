@@ -1,7 +1,7 @@
 import { Elysia } from 'elysia'
-import { sessionManager } from '../core/sessionManager.js'
-import { ChunkMetaSchema, type ChunkMetaMessage, type ChunkAckMessage } from '../models/ApiSchemas.js'
-import { createLogger } from '../shared/logger.js'
+import { sessionManager } from '../core/sessionManager'
+import { ChunkMetaSchema, type ChunkMetaMessage, type ChunkAckMessage } from '../models/ApiSchemas'
+import { createLogger } from '../shared/logger'
 
 /**
  * WebSocket handler for receiving audio chunks

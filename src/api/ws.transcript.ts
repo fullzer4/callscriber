@@ -1,11 +1,11 @@
 import { Elysia } from 'elysia'
-import { sessionManager } from '../core/sessionManager.js'
-import { OpenAIRealtime } from '../core/openaiRealtime.js'
-import { createLogger } from '../shared/logger.js'
+import { sessionManager } from '../core/sessionManager'
+import { OpenAIRealtime } from '../core/openaiRealtime'
+import { createLogger } from '../shared/logger'
 import type {
   TranscriptDeltaMessage,
   TranscriptFinalMessage,
-} from '../models/ApiSchemas.js'
+} from '../models/ApiSchemas'
 
 /**
  * WebSocket handler for streaming transcript to clients

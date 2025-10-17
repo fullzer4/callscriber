@@ -1,7 +1,4 @@
-import { config as dotenvConfig } from 'dotenv'
 import { resolve } from 'path'
-
-dotenvConfig()
 
 export const config = {
   app: {
@@ -37,6 +34,12 @@ export const config = {
   bot: {
     headless: process.env.BOT_HEADLESS !== 'false',
     autoplayPolicy: 'no-user-gesture-required',
+  },
+
+  google: {
+    clientId: process.env.GOOGLE_CLIENT_ID || '',
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+    redirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/auth/google/callback',
   },
 
   auth: {

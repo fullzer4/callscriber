@@ -1,4 +1,4 @@
-import { config } from '../config/index.js'
+import { config } from '../config/index'
 
 export function loginForm(error?: string, csrfToken?: string) {
   return `

@@ -1,6 +1,6 @@
 import { chromium, type Browser, type BrowserContext } from 'playwright'
-import { config } from '../config/index.js'
-import { createLogger } from '../shared/logger.js'
+import { config } from '../config/index'
+import { createLogger } from '../shared/logger'
 
 export class BrowserLauncher {
   private browser: Browser | null = null
@@ -32,12 +32,20 @@ export class BrowserLauncher {
       args.unshift('--headless=new')
     }
 
-    this.browser = await chromium.launch({
-      headless: config.bot.headless,
-      args,
-    })
+    try {
+      this.browser = await chromium.launch({
+        headless: config.bot.headless,
+        args,
+        executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
+      })
 
-    this.logger.info('Chromium browser launched successfully')
+      this.logger.info('Chromium browser launched successfully')
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error)
+      const errorStack = error instanceof Error ? error.stack : undefined
+      this.logger.error({ error: errorMessage, stack: errorStack }, 'Failed to launch browser')
+      throw error
+    }
 
     return this.browser
   }

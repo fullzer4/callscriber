@@ -1,16 +1,15 @@
 import { Elysia, t } from 'elysia'
-import { sessionManager } from '../core/sessionManager.js'
-import { GoogleMeetJoiner } from '../bot/join.meet.js'
-import { config } from '../config/index.js'
-import { logger } from '../shared/logger.js'
+import { sessionManager } from '../core/sessionManager'
+import { GoogleMeetJoiner } from '../bot/join.meet'
+import { config } from '../config/index'
+import { logger } from '../shared/logger'
 import {
   CreateSessionRequestSchema,
   type CreateSessionResponse,
   type GetSessionResponse,
   type DeleteSessionResponse,
-} from '../models/ApiSchemas.js'
+} from '../models/ApiSchemas'
 
-// Store active bot joiners
 const activeBots = new Map<string, GoogleMeetJoiner>()
 
 function detectPlatform(url: string): 'meet' | 'zoom' | 'teams' | 'unknown' {

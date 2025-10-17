@@ -1,9 +1,9 @@
 import { nanoid } from 'nanoid'
-import { createSession, type Session, type SessionMode, type SessionStatus } from '../models/Session.js'
-import { fileStore } from '../storage/fileStore.js'
-import { createManifest, saveManifest } from './manifest.js'
-import { ChunkWriter } from './chunkWriter.js'
-import { logger } from '../shared/logger.js'
+import { createSession, type Session, type SessionMode, type SessionStatus } from '../models/Session'
+import { fileStore } from '../storage/fileStore'
+import { createManifest, saveManifest } from './manifest'
+import { ChunkWriter } from './chunkWriter'
+import { logger } from '../shared/logger'
 
 export class SessionManager {
   private sessions: Map<string, Session> = new Map()
