@@ -12,12 +12,13 @@
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
           bun
-          playwright-driver.browsers
+          chromium
         ];
 
         shellHook = ''
-          export PLAYWRIGHT_BROWSERS_PATH="${pkgs.playwright-driver.browsers}"
+          export PLAYWRIGHT_BROWSERS_PATH="${pkgs.chromium}"
           export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+          export PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH="${pkgs.chromium}/bin/chromium"
           mkdir -p data/sessions
         '';
       };
